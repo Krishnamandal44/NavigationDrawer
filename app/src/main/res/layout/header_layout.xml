@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/side_nav_bar"
+            android:clickable="false"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark">
+            <!--<ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/noimage"
+                android:id="@+id/homedashboard">
+            </ImageView>-->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/homedashboard"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:src="@drawable/person1"
+                android:translationZ="4dp"
+                app:civ_border_color="#b7dcdcdc"
+                app:civ_border_width="2dp" />
+
+            <LinearLayout
+                android:id="@+id/edt_profile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:id="@+id/tv_profile_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Guest"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/tv_profile_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="guest@gmail.com" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/base_activity_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp">
+                    <!--
+                                                <ImageView
+                                                    android:layout_width="28dp"
+                                                    android:layout_height="28dp"
+                                                    app:srcCompat="@drawable/ic_login" />-->
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Profile"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp">
+
+
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="DashBoard"
+                        android:textAllCaps="false" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_attendance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:weightSum="6">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="5"
+                        android:text="Attendance"
+                        android:textAllCaps="false" />
+
+                    <ImageView
+                        android:id="@+id/base_attandance_expand"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:paddingRight="2dp"
+                        app:srcCompat="@drawable/ic_expand_more" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_mark_attendance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="Mark Attendence"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_mark_attendance_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_attendance_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="Details"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_attendance_details_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_quotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:weightSum="6">
+
+                    <!--     <ImageView
+                             android:layout_width="40dp"
+                             android:layout_height="40dp"
+                             app:srcCompat="@drawable/ic_our_team" />
+    -->
+                    <TextView
+                        android:id="@+id/base_activity_our_team"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="5"
+                        android:text="Qutotation"
+                        android:textAllCaps="false" />
+
+                    <ImageView
+                        android:id="@+id/base_quotation_expand"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:paddingRight="2dp"
+                        app:srcCompat="@drawable/ic_expand_more" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_send_quotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="Send Quotation"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_send_quotation_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_quotation_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="List"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_quotation_list_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_ta_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:weightSum="6">
+
+                    <!--       <ImageView
+                               android:layout_width="32dp"
+                               android:layout_height="32dp"
+                               app:srcCompat="@drawable/ic_our_clients" />
+    -->
+                    <TextView
+                        android:id="@+id/base_activity_our_client"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="5"
+                        android:text="TA"
+                        android:textAllCaps="false" />
+
+                    <ImageView
+                        android:id="@+id/base_ta_expand"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:paddingRight="2dp"
+                        app:srcCompat="@drawable/ic_expand_more" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_ta_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="Input"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_ta_input_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_ta_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="Details"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_ta_details_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_customer_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:weightSum="6">
+
+                    <!--      <ImageView
+                              android:layout_width="27dp"
+                              android:layout_height="27dp"
+                              app:srcCompat="@drawable/ic_testimonials" />
+    -->
+                    <TextView
+                        android:id="@+id/base_activity_testimonial"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="5"
+                        android:text="Customer Registration"
+                        android:textAllCaps="false" />
+
+                    <ImageView
+                        android:id="@+id/base_customer_expand"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:paddingRight="2dp"
+                        app:srcCompat="@drawable/ic_expand_more" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_customer_new_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="New Registration"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_customer_new_reg_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_customer_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="List"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_customer_list_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_vendor_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:weightSum="6">
+
+                    <!--      <ImageView
+                              android:layout_width="27dp"
+                              android:layout_height="27dp"
+                              app:srcCompat="@drawable/ic_testimonials" />
+    -->
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="5"
+                        android:text="Vendor Registration"
+                        android:textAllCaps="false" />
+
+                    <ImageView
+                        android:id="@+id/base_vendor_expand"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:paddingRight="2dp"
+                        app:srcCompat="@drawable/ic_expand_more" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_vendor_new_registration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="New Registration"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_vendor_new_reg_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_activity_vendor_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp"
+                    android:visibility="gone">
+
+                    <!--     <ImageView
+                             android:layout_width="30dp"
+                             android:layout_height="30dp"
+                             app:srcCompat="@drawable/ic_add_alarm_black_24dp" />
+    -->
+                    <TextView
+                        style="@style/DescriptionTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="List"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/base_vendor_list_line_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/base_coupon_redeem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp">
+
+                    <!--      <ImageView
+                              android:layout_width="24dp"
+                              android:layout_height="24dp"
+                              app:srcCompat="@drawable/ic_terms_and_condition_color" />
+    -->
+                    <TextView
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Coupon Redeem"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:id="@+id/base_redeem_customer_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp">
+
+                    <!--  <ImageView
+                          android:layout_width="28dp"
+                          android:layout_height="28dp"
+                          app:srcCompat="@drawable/ic_privacy_policy_color" />
+    -->
+                    <TextView
+                        android:id="@+id/privacyPolicy"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Reedem customer Coupon"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp">
+
+                    <!--     <ImageView
+                             android:layout_width="34dp"
+                             android:layout_height="34dp"
+                             app:srcCompat="@drawable/ic_refund_policy_icon" />
+    -->
+                    <TextView
+                        android:id="@+id/refundPolicy"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Analytics coupon for all Vendor"
+                        android:textAllCaps="false"
+
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical|left"
+                    android:onClick="logout"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="17dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="10dp"
+                    android:translationZ="2dp">
+                    <!--
+
+                                                <ImageView
+                                                    android:layout_width="24dp"
+                                                    android:layout_height="24dp"
+                                                    app:srcCompat="@drawable/ic_faq_color" />
+                    -->
+
+                    <TextView
+                        android:id="@+id/faq"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Logout"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorHint" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>
